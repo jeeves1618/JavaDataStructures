@@ -8,7 +8,8 @@ class ScanDemo {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please Enter your Annual Salary :");
-        double professionalTax = 2400.0D, PF=12115.0D, section80c = 150000.0D, standardDeduction = 40000.0D, houseLoan = 200000.0D;
+        double professionalTax = 2400.0D, PF=12115.0D, section80c = 150000.0D, standardDeduction = 40000.0D,
+                houseLoanInt = 200000.0D;
         double annualSalary = scan.nextDouble();
         double totalTax = 0.0D, remainingSalary = 0.0D;
         int[] salarySlab = new int[]{250000, 250000, 500000, 1000000};
@@ -17,7 +18,7 @@ class ScanDemo {
         double[] taxRate2020 = new double[]{0.0D, 5.2D, 10.4D, 15.6D, 20.8D, 26.0D, 31.2D};
 
         DecimalFormat ft = new DecimalFormat("Rs ##,##,###.##");
-        remainingSalary = annualSalary - section80c - standardDeduction - houseLoan;
+        remainingSalary = annualSalary - section80c - standardDeduction - houseLoanInt;
 
         for(int i = 0; i < 4 && annualSalary > 0.0D; ++i) {
             totalTax += (double)salarySlab[i] * taxRate[i] / 100.0D;
